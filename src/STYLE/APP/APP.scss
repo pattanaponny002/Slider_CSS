@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+.container {
+  display: flex;
+  background: linear-gradient(purple, orange, yellow);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  .slider {
+    margin: 100px;
+    width: 500%;
+    height: 100%;
+    border: 15px solid black;
+    border-radius: 15px;
+
+    display: flex;
+    overflow: hidden;
+
+    .card {
+      width: 20rem;
+      height: 25rem;
+      border-radius: 1rem;
+
+      transition: 0.5s;
+      -webkit-box-reflect: below 5px
+        linear-gradient(0deg, white, transparent 30%);
+    }
+    > img {
+      transform: rotateY(50deg) scale(0.6); // every single one
+      ~ img {
+        //other in the same level
+        transform: scale(0.6) rotateY(120deg);
+      }
+    }
+  }
+
+  // #r1:checked ~ .container .slider > img:nth-child(1) {
+  //   transform: translateY(12rem);
+  // }
+  .controller_label {
+    position: absolute;
+    bottom: 20%;
+    display: flex;
+    > * {
+      width: 25px;
+      height: 25px;
+      border: 5px solid white;
+      box-shadow: 5px 5px 5px gray;
+      border-radius: 50%;
+      margin: 5px;
+      background-color: gray;
+      transition: background-color 0.5s;
+
+      &:hover {
+        background-color: blue;
+      }
+    }
+  }
+  input {
+    display: none;
+  }
+  // how to
+
+  //container is bigger than, so we start with slider in the same levels
+  #r0:checked ~ .slider > :nth-child(1) {
+    margin-left: 45%;
+  }
+  #r1:checked ~ .slider > :nth-child(1) {
+    margin-left: 28%;
+  }
+  #r2:checked ~ .slider > :nth-child(1) {
+    margin-left: 11%;
+  }
+  #r3:checked ~ .slider > :nth-child(1) {
+    margin-left: -10%;
+  }
+  #r4:checked ~ .slider > :nth-child(1) {
+    margin-left: -32%;
+  }
+  #r5:checked ~ .slider > :nth-child(1) {
+    margin-left: -50%;
+  }
+
+  #r0:checked ~ .slider > :nth-child(1) {
+    transform: rotateY(360deg);
+  }
+  #r1:checked ~ .slider > :nth-child(2) {
+    transform: rotateY(360deg);
+  }
+  #r2:checked ~ .slider > :nth-child(3) {
+    transform: rotateY(360deg);
+  }
+  #r3:checked ~ .slider > :nth-child(4) {
+    transform: rotateY(360deg);
+  }
+  #r4:checked ~ .slider > :nth-child(5) {
+    transform: rotateY(360deg);
+  }
+  #r5:checked ~ .slider > :nth-child(6) {
+    transform: rotateY(360deg);
+  }
+}
+
+// html {
+//   scroll-behavior: smooth;
+// }
+//
+
+//   .section_count {
+//     margin: 1rem;
+//     width: 50%;
+//     height: 30%;
+
+//     border-radius: 25px;
+
+//     position: relative;
+
+//     background-color: pink;
+//     transform-style: preserve-3d;
+//     transition: 5s;
+
+//     &:hover {
+//       transform: rotateY(360deg);
+//     }
+
+//     .card-font,
+//     .back-card {
+//       position: absolute;
+
+//       inset: 0;
+
+//       border-radius: 25px;
+//     }
+//     .card-font {
+//       background-color: orange;
+//       transform: rotateY(0.5turn);
+//       transform-style: preserve-3d;
+//       backface-visibility: hidden;
+//       h2 {
+//         font-size: 2rem;
+//         color: red;
+
+//         transform: translateZ(5rem);
+//       }
+//     }
+//     .back-card {
+//       background-color: lightblue;
+//       backface-visibility: hidden;
+//       transform-style: preserve-3d;
+
+//       &::before {
+//         content: "";
+//         position: absolute;
+
+//         inset: 0;
+//         outline: 3px solid black;
+//         outline-offset: -20px;
+//         transform: translateZ(2rem);
+//       }
+
+//       h2 {
+//         font-size: 2rem;
+//         color: black;
+
+//         transform: translateZ(5rem);
+//       }
+//     }
+//   }
+
+// .App_container {
+//   background: linear-gradient(purple, orange, yellow);
+//   height: 200vh;
+//   display: grid;
+
+//   grid-auto-flow: column;
+//   :nth-child(-2n - 1) {
+//     background-color: blue;
+//   }
+
+//   .tool {
+//     position: fixed;
+//     display: flex;
+//     border: 3px solid black;
+//     gap: 5rem;
+//   }
+//   .section {
+//     border: 3px solid black;
+//     width: 100vw;
+//     height: 50%;
+
+//     &:hover + {
+//       .section2 {
+//         background: red;
+//         transform: rotateY(0.25turn);
+//         .title_section2 {
+//           font-size: 55rem;
+//         }
+//       }
+//     }
+//   }
+//   .section2 {
+//     background-color: aqua;
+//     width: 100vw;
+//     height: 50%;
+//     margin-top: 50%;
+//     transition: 5s;
+//     transform-style: preserve-3d;
+//     > * {
+//       transform: translateZ(25rem);
+//     }
+//   }
